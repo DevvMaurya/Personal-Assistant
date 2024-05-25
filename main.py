@@ -48,7 +48,7 @@ def command_executor(command:str):
     if ready_for_task:
         # open app present in windows.!
         if "open" in command:
-            app_name = command.split(" ").pop()  #  --> "open notepad" >> "notepad"
+            app_name = command.split("open",1)[1]  #  --> "open notepad" >> "notepad"
             if app_name != "open":
                 obj_tts.say("Opening " + app_name + "...")
                 t_open_app = threading.Thread(target=open_app, args=(app_name,))
